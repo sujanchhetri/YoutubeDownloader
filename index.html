@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129522525-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129522525-2');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <title>Search your videos and download</title>
+</head>
+
+<body>
+  <div style='position:fixed;width:100%;height:100%;z-index:20;background: rgba(0,0,0,0.8);display: none;'>
+    <button class='exit' style='position: absolute;right:0.5em;top:0.5em;'>&times;</button>
+    <video autoplay controls width='854px' heigh='480px' preload='auto' style='position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;'>
+      <source>
+    </video>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto" href="#">
+      <img src="/youtube.png" width="120" height="30" class="d-inline-block align-top align-center" alt="">
+        </a>  
+      </nav>
+              <div class="alert alert-success" role="alert" style='padding:20px 30px; text-align: center;'>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <b>Download audios and videos</b>
+      <br>
+     Enjoy
+      </div>
+      <div class="input-group col-sm-5 my-5 mx-auto">
+        <input type="text" class="form-control" id="input-box" placeholder="Search for Something...">
+        <div class="input-group-append">
+          <button style="background-color: indigo" class="btn btn-primary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+      <br>
+      <div id="main-container" style='margin-bottom:2em;'>
+        <div id='loading' style="display:none;">
+          <img src='https://www.sapstore.com/_ui/desktop/theme-sap-sapphire/images/spinner.gif' style='display:block;margin:10px auto;'
+            width='100px'>
+          <h3 style="text-align:center">Searching...</h3>
+        </div>
+        <div class="card mx-auto" style="width: 90%;display: none;margin-top:1em;" id="template">
+          <div class="card-body">
+            <img class="card-img thumbnail" src="https://img.youtube.com/vi/G7iI7YmIr30/0.jpg" alt="Card image" style="width:320px;float:left; margin-right:20px;">
+            <h5 class="card-title video-title">This is a Videeeeeo! </h5>
+            <h6 class="card-subtitle mb-2 text-muted channel-name">HelloWorld!</h6>
+            <p class="card-text video-description">oh yeah</p>
+            <h6 class="card-subtitle mb-2 text-muted published-at">Published On 13/7/2018</h6>
+            <h6 class="card-subtitle mb-2 text-muted duration">Duration: </h6>
+            <h6 class="card-subtitle mb-2 text-muted views">... views</h6>
+            <h6 class="card-subtitle mb-2 text-muted video-id">ID: AvgCkHrcj90</h6>
+            <button type="button" class="btn btn-primary" onclick="sendToDownload(this,'watch');">Watch Video <span class="badge badge-light">BETA</span></button>
+            <button type="button" class="btn btn-dark" onclick="sendToDownload(this,'mp4');">Download Video</button>
+            <button type="button" class="btn btn-dark" onclick="sendToDownload(this,'mp3');">Download mp3</button>
+          </div>
+        </div>
+        <script src="/script.js"></script>
+
+        <style> 
+        .exit {
+          border-radius:4px;
+          background:rgba(0,0,0,0);
+          color:white;
+          width:2.5em;
+          height:2.5em;
+          border:0;
+          transition: 0.1s;
+        }
+
+        .exit:hover {
+          background: rgba(255, 255, 255, 0.3)
+        }
+        </style>
+</body>
+
+</html>
